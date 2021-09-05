@@ -17,10 +17,11 @@ import org.junit.Test;
 public class TestSoda {
 
 	ProBusinessLogic proLogic = new ProBusinessLogic();
-	Soda soda = new Soda();
+	Soda orangeSoda = new Soda("Orange Crush", "Dr.Pepper", 2.5, 100, "2-liter");
+	//variable for testing calculateSalePrice()
+	double fifteenPercent = 15;
 	
-
-		
+	
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -29,17 +30,20 @@ public class TestSoda {
 	}
 
 	@Test
-	public void testCalculateSalePrice() {
-		soda.setPrice(3.00);
-		double salePrice = proLogic.calculateSalePrice(soda);
-		assertEquals(2.43, salePrice, 0.00);
+	public void testCalculateSalePrice() {		
+		double salePrice = proLogic.calculateSalePrice(orangeSoda, fifteenPercent);
+		assertEquals(2.125, salePrice, 0.00);
 	}
 	
 	@Test
-	public void testCheckInStock() {
-		soda.setCount(80);
-		assertTrue(proLogic.checkInStock(soda));
-	}
+	public void testCheckInStock() {		
+		assertTrue(proLogic.checkInStock(orangeSoda));
+	}	
 	
+	@Test 
+	public void testOutOfStock() {
+		orangeSoda.setCount(0);
+		assertFalse(proLogic.checkInStock(orangeSoda));
+	}
 
 }

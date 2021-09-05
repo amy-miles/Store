@@ -8,12 +8,20 @@ package model;
  * Aug 30, 2021
  * this class contains methods to calculate the Sale Price and check if an item is in stock
  */
-public class ProBusinessLogic {
+public class ProBusinessLogic {	
 	
-	public double calculateSalePrice(Product product) {
+	/**
+	 * this method takes a product and a discount in the form "10" or "15" and calculates the salePrice
+	 * @param product
+	 * @param percent
+	 * @return ssalePrice
+	 */
+	public double calculateSalePrice(Product product, double percent) {
 		double price = 0.0;
-	    price = product.getPrice() * .9;
-		return price * .90;
+		price = product.getPrice();	    
+	    double discount = price * (percent / 100);
+	    double salePrice = price - discount;
+		return salePrice;
 	}
 	
 	public boolean checkInStock(Product product) {
