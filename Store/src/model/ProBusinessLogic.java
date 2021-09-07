@@ -12,9 +12,9 @@ public class ProBusinessLogic {
 	
 	/**
 	 * this method takes a product and a discount in the form "10" or "15" and calculates the salePrice
-	 * @param product
-	 * @param percent
-	 * @return ssalePrice
+	 * @param product Product object 
+	 * @param percent accepts a double percent in the form of 10, 15, etc
+	 * @return salePrice
 	 */
 	public double calculateSalePrice(Product product, double percent) {
 		double price = 0.0;
@@ -23,7 +23,12 @@ public class ProBusinessLogic {
 	    double salePrice = price - discount;
 		return salePrice;
 	}
-	
+	/**
+	 * This method takes a Product object for an argument and calls the getCount method to 
+	 * determine if product is in stock
+	 * @param product the variable name of the Product object 
+	 * @return boolean
+	 */
 	public boolean checkInStock(Product product) {
 		int count = product.getCount();
 		if (count >= 1) {

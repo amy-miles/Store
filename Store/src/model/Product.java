@@ -22,10 +22,10 @@ public class Product {
 	
 	/**
 	 * Constructor with params
-	 * @param name
-	 * @param manufacturer
-	 * @param price
-	 * @param count
+	 * @param name accepts a String argument
+	 * @param manufacturer accepts a String argument
+	 * @param price accepts a double argument
+	 * @param count accepts an int argument
 	 */
 	public Product(String name, String manufacturer, double price, int count) {
 		this.name = name;

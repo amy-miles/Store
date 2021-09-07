@@ -19,10 +19,11 @@ public class Soda extends Product{
 	
 	/**
 	 * Constructor that inherits fields from super and adds form variable from soda class
-	 * @param name
-	 * @param manufacturer
-	 * @param price
-	 * @param count
+	 * @param name accepts a String argument
+	 * @param manufacturer accepts a String argument
+	 * @param price accepts a double argument
+	 * @param count accepts an int argument
+	 * @param form accepts a String argument
 	 */
 	public Soda(String name, String manufacturer, double price, int count, String form) {
 		super(name, manufacturer, price, count);

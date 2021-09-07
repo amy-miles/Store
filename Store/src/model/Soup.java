@@ -13,10 +13,11 @@ public class Soup extends Product {
 
 	/**
 	 * Constructor for Soup class that inherits the fields from the super class, product
-	 * @param name
-	 * @param manufacturer
-	 * @param price
-	 * @param count
+	 * @param name accepts a String argument
+	 * @param manufacturer accepts a String argument
+	 * @param price accepts a double argument
+	 * @param count accepts an int argument
+	 * @param sizeInOunces accepts a double argument
 	 */
 	public Soup(String name, String manufacturer, double price, int count, double sizeInOunces) {
 		super(name, manufacturer, price, count);
